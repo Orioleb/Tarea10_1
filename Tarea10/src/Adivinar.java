@@ -5,14 +5,17 @@ import java.util.concurrent.ThreadLocalRandom;
 public class Adivinar {
 	static Scanner teclat= new Scanner(System.in);
 	public static void main(String[] args) {
+		//rango
 		int minval=1;
 		int maxval=500;
+		//generamos entero aleatoriamente
 		int numero=ThreadLocalRandom.current().nextInt(minval, maxval + 1);
 		boolean trobat=false;
 		int cont=1;
 		int usuari=0;
 		while(trobat==false){
 			boolean repetir;
+			//hasta que no tengamos un entero saltara la excepcion
 			do{
 				repetir=false;
 				try {
@@ -26,6 +29,7 @@ public class Adivinar {
 					repetir=true;
 				}
 			}while(repetir);
+			//condiciones de juego
 			if(numero==usuari) {
 				trobat=true;
 				cont++;
